@@ -22,7 +22,7 @@ public class QuickSort {
 		int i=low-1;
 		for (int j=low; j<high; j++)
 		{
-			if (arr[j] < arr[high])
+			if (arr[j] <= arr[high])
 			{
 				i++;
 				//swap
@@ -41,7 +41,7 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] test = new int[] {5,8,11,4,2,9,6,7};
+		int[] test = new int[] {5,8,11,4,2,9};
 		QuickSort x = new QuickSort(test);
 		
 		for (int i : x.arr)
