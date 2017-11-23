@@ -13,7 +13,7 @@ public class QuickSort {
 		if (low < high) {
 			int pivot = partition(this.arr, low, high);
 			SolveQuickSort(this.arr, low, pivot-1);
-			SolveQuickSort(this.arr, high+1, this.arr.length-1);
+			SolveQuickSort(this.arr, pivot+1, this.arr.length-1);
 		}
 	}
 	
@@ -48,6 +48,9 @@ public class QuickSort {
 		{
 			System.out.print(i + " ");
 		}
+		
+		//System.out.println("hello".compareTo("haa"));
+		System.out.println(0 / 3);
 	}
 
 }
