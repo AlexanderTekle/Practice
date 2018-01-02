@@ -8,6 +8,35 @@ public class QuickSort {
 
 	}
 	
+	public void SolveQuickSort(int arr[], int low, int high)
+	{
+		if (low < high) {
+			int pivot = partition(this.arr, low, high);
+			SolveQuickSort(this.arr, low, pivot-1);
+			SolveQuickSort(this.arr, pivot+1, arr.length-1);
+		}
+	}
+	
+	int partition(int[] arr, int low, int high)
+	{
+		int i = low-1;
+		for (int j=low;j<high;j++) {
+			if (arr[j] <= arr[high]) {
+				i++;
+				int temp = arr[j];
+				arr[j]=arr[i];
+				arr[i]=temp;
+			}	
+		}
+		
+		//move pivot
+		i++;
+		int temp = arr[i];
+		arr[i]=arr[high];
+		arr[high]=temp;
+		return i;
+	}
+	/*
 	public void SolveQuickSort(int[] arr, int low, int high)
 	{
 		if (low < high) {
@@ -37,11 +66,11 @@ public class QuickSort {
 		arr[i] = arr[high];
 		arr[high] = temp;
 		return i;
-	}
+	}*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] test = new int[] {5,8,11,4,2,9};
+		int[] test = new int[] {5,8,11,4,2,9, 4, 7, 10, 5};
 		QuickSort x = new QuickSort(test);
 		
 		for (int i : x.arr)
