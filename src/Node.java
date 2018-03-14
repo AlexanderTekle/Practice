@@ -126,6 +126,21 @@ class LinkedList {
 		head = prev;
 	}
 	
+	public void reverse3() {
+		Node curr=head;
+		Node next=null;
+		Node prev=null;
+		
+		while (curr != null)
+		{
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+		
+	}
+	
 }
 
 
